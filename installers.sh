@@ -1,9 +1,13 @@
-function install_nvim(){
-	log "Installing 'neovim'..."
-	brew_install "neovim"
-	pip install flake8 jedi
-	pip3 install --user --upgrade neovim
-	curl 'https://vim-bootstrap.com/generate.vim' --data 'editor=nvim&langs=javascript&langs=typescript&langs=html' > $XDG_CONFIG_HOME/nvim/init.vim
-}
-
-install_nvim
+source ./brew.sh
+source ./curl.sh
+source ./wget.sh
+source ./axel.sh
+source ./jetbrains_mono.sh
+source ./ohmyzsh.sh
+source ./bat.sh
+source ./z.sh
+source ./fzf.sh
+source ./z.sh
+source ./vscode.sh
+source ./sublime.sh
+source ./tig.sh

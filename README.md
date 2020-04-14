@@ -44,3 +44,10 @@ sh ./run.sh
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mousavi86/mackar
+
+### How
+
+Add a new file with name of app. Each installer should contain a function call `install_<app_name>` install and source the new file inside of `installers.sh`.
+
+### Test
+
