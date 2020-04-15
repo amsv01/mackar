@@ -49,10 +49,10 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/mousav
 
 ### How
 
-1- Create a file inside of installers directory and call it `<app_name>.sh`.
-2- Create a function in that file by this naming convention `install_<app_name>`.
-3- Add all installing formula under that function
-4- Run the script again. :)
+1. Create a file inside of installers directory and call it `<app_name>.sh`.
+2. Create a function in that file by this naming convention `install_<app_name>`.
+3. Add all installing formula under that function
+4. Run the script again. :)
 
 ### Test
 
