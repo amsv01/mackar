@@ -47,7 +47,10 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/mousav
 
 ### How
 
-Add a new file with name of app. Each installer should contain a function call `install_<app_name>` install and source the new file inside of `installers.sh`.
+1- Create a file inside of installers directory and call it `<app_name>.sh`. 
+2- Create a function in that file by this naming convention `install_<app_name>`.
+3- Add all installing formula under that function
+4- Run the script again. :)
 
 ### Test
 
