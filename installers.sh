@@ -19,33 +19,23 @@ function brew_cask_install() {
 }
 
 function install_brew(){
+  log.installing "Homebrew"
   if [[ ! $(which brew) ]] ; then
     xcode-select --install
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew tap caskroom/cask
   fi
-  log "Hombrew has been installed!"
+  log.installed "Hombrew"
 }
 
+# Read installers and make an array of them
+installer_file_list=$(ls ./installers | sed -e 's/\.sh$//')
+read -a installers <<< ${installer_file_list}
+installer_count=${#installers[@]}
 
 install_brew
 
-for installer in ./installers/*
-do
-  source "$entry"
-  eval "install_$entry"
+for i in ${!installers[@]}; do
+	installer=${installers[i]}
+  source "./installers/$installer.sh"
 done
-
-# source ./brew.sh
-# source ./curl.sh
-# source ./wget.sh
-# source ./axel.sh
-# source ./jetbrains_mono.sh
-# source ./ohmyzsh.sh
-# source ./bat.sh
-# source ./z.sh
-# source ./fzf.sh
-# source ./z.sh
-# source ./vscode.sh
-# source ./sublime.sh
-# source ./tig.sh

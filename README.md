@@ -8,7 +8,7 @@ Tired of reconfiguring your macOS, this is my solution!
 
 **Long version**
 
-As a consultant or a person or move to new device in short period of time, you want to have a full and quick automatic configuration for your macOS to save your time and make your life easier. Here I create a repo with all tool that I found useful and cool for developers in all these years.
+As a consultant or a person or move to new device in short period, you want to have a full and quick automatic configuration for your macOS to save your time and make your life easier. Here I create a repo with all tool that I found useful and cool for developers in all these years.
 
 Why do I call it macKar? In Persian if you add "Kar" postfix to a word means a person who use or good in working with that. In the same time "mak-kar" is an adjective in Persian which means cunning. Pretty cool mix of English and Persian, hah?
 
@@ -24,10 +24,12 @@ Why do I call it macKar? In Persian if you add "Kar" postfix to a word means a p
 - git
 - ctags
 - nvim (+configuration)
+- tmux (TODO)s
 - z
 - fzf
 - bat
 - tig
+- docker (TODO)
 - IntelliJ (TODO)
 - Miniconda (TODO)
 - Sublime 3 (+configuration)
@@ -35,6 +37,8 @@ Why do I call it macKar? In Persian if you add "Kar" postfix to a word means a p
 - Jetbrains Mono font
 
 ## Usage
+
+⚠️🚨 This repo is under development!
 
 ```
 cd ~
