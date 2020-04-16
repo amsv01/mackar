@@ -32,17 +32,27 @@ Why do I call it macKar? In Persian if you add "Kar" postfix to a word means a p
 - git
 - ctags
 - nvim (+configuration)
-- tmux (TODO)s
 - z
 - fzf
 - bat
 - tig
-- docker (TODO)
-- IntelliJ (TODO)
-- Miniconda (TODO)
 - Sublime 3 (+configuration)
 - VSCode (+configuration)
 - Jetbrains Mono font
+
+### Future
+
+- docker
+- IntelliJ
+- Miniconda
+- Nodejs
+- n
+- Jq
+- Virtualenv
+- Slack
+- Iterm2
+- 1password
+- Ssh
 
 ## Usage
 
