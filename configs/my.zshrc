@@ -77,7 +77,7 @@ COMPLETION_WAITING_DOTS="true"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -103,17 +103,17 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(
     git
-    # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     zsh-autosuggestions
     python
     yarn
     node
+    tig
+    npm
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias j='jump '
 alias y='yarn '
 alias yr='yarn run '
 alias yrd='yarn run dev'
@@ -126,9 +126,6 @@ alias gst='git status '
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/flutter/bin:$PATH
 export XDG_CONFIG_HOME=/Users/$USER_PATH/.config
-
-export AWS_REGION=eu-west-1
-export AWS_DEFAULT_REGION=eu-west-1
 
 # Intialize z (jump to dir)
 . /usr/local/etc/profile.d/z.sh
@@ -154,4 +151,10 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Viaplay specific settings
+export AWS_REGION=eu-west-1
+export AWS_DEFAULT_REGION=eu-west-1
 
