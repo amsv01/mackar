@@ -28,9 +28,12 @@ function progress(){
 	echo "\033[u"
 }
 
-progress 4 20
-sleep 1
-progress 5 20
+#progress 4 20
+#sleep 1
+#progress 5 20
+
+
+
 #progress "In progress" 1 20
 #logOut "Line 1"
 #logOut "Line 2"
@@ -49,5 +52,29 @@ progress 5 20
 #echo "Line 5"
 #moveNUp 2 "Line Sample"
 #echo "\033[5ALine 6"
+ftest() {
+	echo "  info: Checking for ${1}"
+	if ! type -f "${1}" > /dev/null 2>&1; then
+		return 1
+	else
+		return 0
+	fi
+}
+
+features () {
+	for f in "${@}"; do
+		ftest "${f}" || {
+		echo >&2 "  error: Missing \`${f}'! Make sure it exists and try again."
+		return 1
+	}
+	done
+	return 0
+}
+
+features git brew
+type -f git1 > /dev/null 2>&1
+if test $? -gt 0; then
+	echo "error"
+fi
 
 

@@ -1,58 +1,111 @@
 #!/usr/bin/env bash
+#	 __    __     ______     ______     __  __     ______     ______
+#	/\ "-./  \   /\  __ \   /\  ___\   /\ \/ /    /\  __ \   /\  == \
+#	\ \ \-./\ \  \ \  __ \  \ \ \____  \ \  _"-.  \ \  __ \  \ \  __<
+#	 \ \_\ \ \_\  \ \_\ \_\  \ \_____\  \ \_\ \_\  \ \_\ \_\  \ \_\ \_\
+#		\/_/  \/_/   \/_/\/_/   \/_____/   \/_/\/_/   \/_/\/_/   \/_/ /_/
+#
+# Self macOS configure for developers
+#
+# https://github.com/amsv01/mackar
+#
+# Updates copyright (c) 2020 Amin Mousavi • tigmin@gmail.com
 
-source ./.env
-source ./console.sh
-source ./progressbar.sh
+ftest() {
+	echo " info: Checking for ${1}"
+	if ! type -f "${1}" > /dev/null 2>&1; then
+		return 1
+	else
+		return 0
+	fi
+}
 
-while test $# -gt 0; do
-  case "$1" in
-    -h|--help)
-      echo "$package - attempt to capture frames"
-      echo " "
-      echo "$package [options] application [arguments]"
-      echo " "
-      echo "options:"
-      echo "-h, --help                show brief help"
-      echo "-a, --action=ACTION       specify an action to use"
-      echo "-o, --output-dir=DIR      specify a directory to store output in"
-      exit 0
-      ;;
-    -a)
-      shift
-      if test $# -gt 0; then
-        export PROCESS=$1
-      else
-        echo "no process specified"
-        exit 1
-      fi
-      shift
-      ;;
-    --action*)
-      export PROCESS=`echo $1 | sed -e 's/^[^=]*=//g'`
-      shift
-      ;;
-    -o)
-      shift
-      if test $# -gt 0; then
-        export OUTPUT=$1
-      else
-        echo "no output dir specified"
-        exit 1
-      fi
-      shift
-      ;;
-    --output-dir*)
-      export OUTPUT=`echo $1 | sed -e 's/^[^=]*=//g'`
-      shift
-      ;;
-    *)
-      break
-      ;;
-  esac
-done
+features () {
+	for f in "${@}"; do
+		ftest "${f}" || {
+		echo >&2 "  error: Missing \`${f}'! Make sure it exists and try again."
+		return 1
+	}
+	done
+	return 0
+}
 
-rm -rf ./temp || exit
-mkdir ./temp || exit
+ibrew(){
+	if ! ftest brew; then
+		xcode-select --install
+		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		brew tap caskroom/cask
+	fi
+}
 
-#source ./installers.sh
-rm -rf ./temp || exit
+bi(){
+	for f in "${@}"; do
+		ftest "${f}" || {
+		brew install git
+		return 1
+	}
+	done
+	echo " info: already exist!"
+	return 0
+}
+
+igit(){
+	if ! ftest git; then
+		bi git
+	else
+		echo " info: git already exist!"
+	fi
+}
+
+#while test $# -gt 0; do
+#  case "$1" in
+#    -h|--help)
+#      echo "$package - attempt to capture frames"
+#      echo " "
+#      echo "$package [options] application [arguments]"
+#      echo " "
+#      echo "options:"
+#      echo "-h, --help                show brief help"
+#      echo "-a, --action=ACTION       specify an action to use"
+#      echo "-o, --output-dir=DIR      specify a directory to store output in"
+#      exit 0
+#      ;;
+#    -a)
+#      shift
+#      if test $# -gt 0; then
+#        export PROCESS=$1
+#      else
+#        echo "no process specified"
+#        exit 1
+#      fi
+#      shift
+#      ;;
+#    --action*)
+#      export PROCESS=`echo $1 | sed -e 's/^[^=]*=//g'`
+#      shift
+#      ;;
+#    -o)
+#      shift
+#      if test $# -gt 0; then
+#        export OUTPUT=$1
+#      else
+#        echo "no output dir specified"
+#        exit 1
+#      fi
+#      shift
+#      ;;
+#    --output-dir*)
+#      export OUTPUT=`echo $1 | sed -e 's/^[^=]*=//g'`
+#      shift
+#      ;;
+#    *)
+#      break
+#      ;;
+#  esac
+#done
+#
+#rm -rf ./temp || exit
+#mkdir ./temp || exit
+#
+##source ./installers.sh
+#rm -rf ./temp || exit
