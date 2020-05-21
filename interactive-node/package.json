@@ -1,0 +1,11 @@
+{
+  "name": "mackar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Amin Mousavi",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "enquirer": "^2.3.5"
+  }
+}
