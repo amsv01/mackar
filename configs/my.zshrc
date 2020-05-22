@@ -123,6 +123,8 @@ alias push='git push '
 alias pull='git pull '
 alias add='git add '
 alias gst='git status '
+alias vim='nvim'
+alias vimo='vim'
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/flutter/bin:$PATH
 export XDG_CONFIG_HOME=/Users/$USER_PATH/.config
@@ -157,4 +159,9 @@ unset __conda_setup
 # Viaplay specific settings
 export AWS_REGION=eu-west-1
 export AWS_DEFAULT_REGION=eu-west-1
+
+# My personal functions
+bman () { 
+    man bash | less -p "^       $1 "
+}
 
