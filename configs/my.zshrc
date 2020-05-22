@@ -125,6 +125,7 @@ alias add='git add '
 alias gst='git status '
 alias vim='nvim'
 alias vimo='vim'
+alias v='nvim'
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/flutter/bin:$PATH
 export XDG_CONFIG_HOME=/Users/$USER_PATH/.config
