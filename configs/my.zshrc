@@ -109,6 +109,7 @@ plugins=(
     node
     tig
     npm
+    git-open
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -128,7 +129,7 @@ alias vimo='vim'
 alias v='nvim'
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/flutter/bin:$PATH
-export XDG_CONFIG_HOME=/Users/$USER_PATH/.config
+export XDG_CONFIG_HOME=$USER_PATH/.config
 
 # Intialize z (jump to dir)
 . /usr/local/etc/profile.d/z.sh
