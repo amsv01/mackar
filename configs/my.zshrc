@@ -129,7 +129,7 @@ alias vimo='vim'
 alias v='nvim'
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/flutter/bin:$PATH
-export XDG_CONFIG_HOME=$USER_PATH/.config
+export XDG_CONFIG_HOME=$HOME/config
 
 # Intialize z (jump to dir)
 . /usr/local/etc/profile.d/z.sh
@@ -163,7 +163,7 @@ export AWS_REGION=eu-west-1
 export AWS_DEFAULT_REGION=eu-west-1
 
 # My personal functions
-bman () { 
+bashman () { 
     man bash | less -p "^       $1 "
 }
 

@@ -176,7 +176,7 @@ set ruler
 set number
 
 let no_buffers_menu=1
-silent! colorscheme onedark
+silent! colorscheme molokai
 
 set mousemodel=popup
 set t_Co=256
