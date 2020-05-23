@@ -38,12 +38,14 @@ Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'easymotion/vim-easymotion'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint', 'coc-actions']
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -92,10 +94,10 @@ Plug 'mattn/emmet-vim'
 Plug 'jelera/vim-javascript-syntax'
 
 
-" python
-"" Python Bundle
-Plug 'davidhalter/jedi-vim'
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+" " python
+" "" Python Bundle
+" Plug 'davidhalter/jedi-vim'
+" Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 
 " rust
@@ -108,6 +110,7 @@ Plug 'rust-lang/rust.vim'
 
 " typescript
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'HerringtonDarkholme/yats.vim'
 
 
@@ -291,6 +294,24 @@ let Grep_Skip_Dirs = '.git node_modules'
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
 
+"*****************************************************************************
+"" Terminal
+"*****************************************************************************
+set shell=zsh
+
+" open new split panes to right and below
+set splitright
+set splitbelow
+" turn terminal to normal mode with escape
+tnoremap <Esc> <C-\><C-n>
+" start terminal in insert mode
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" open terminal on ctrl+n
+function! OpenTerminal()
+  split term://zsh
+  resize 10
+endfunction
+nnoremap <c-n> :call OpenTerminal()<CR>
 
 "*****************************************************************************
 "" Commands
@@ -408,7 +429,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 " ale
-let g:ale_linters = {}
+" let g:ale_linters = {}
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -497,20 +518,20 @@ augroup vimrc-python
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
-" jedi-vim
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = "<leader>r"
-let g:jedi#show_call_signatures = "0"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#smart_auto_mappings = 0
+" " jedi-vim
+" let g:jedi#popup_on_dot = 0
+" let g:jedi#goto_assignments_command = "<leader>g"
+" let g:jedi#goto_definitions_command = "<leader>d"
+" let g:jedi#documentation_command = "K"
+" let g:jedi#usages_command = "<leader>n"
+" let g:jedi#rename_command = "<leader>r"
+" let g:jedi#show_call_signatures = "0"
+" let g:jedi#completions_command = "<C-Space>"
+" let g:jedi#smart_auto_mappings = 0
 
 " ale
-:call extend(g:ale_linters, {
-    \'python': ['flake8'], })
+" :call extend(g:ale_linters, {
+"     \'python': ['flake8'], })
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
