@@ -68,6 +68,7 @@ Plug 'honza/vim-snippets'
 "" Color
 Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
+Plug 'drewtempelmeyer/palenight.vim'
 
 "*****************************************************************************
 "" Custom bundles
@@ -174,9 +175,27 @@ let g:session_command_aliases = 1
 syntax on
 set ruler
 set number
+set numberwidth=5
 
 let no_buffers_menu=1
-silent! colorscheme molokai
+silent! colorscheme palenight
+
+" palenight specific config {
+" https://github.com/drewtempelmeyer/palenight.vim#true-colors
+let g:palenight_terminal_italics=1
+
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+" }
 
 set mousemodel=popup
 set t_Co=256
@@ -229,7 +248,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'palenight'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
