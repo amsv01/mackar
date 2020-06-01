@@ -180,8 +180,8 @@ endif
 
 " session management
 let g:session_directory = "~/.config/nvim/session"
-let g:session_autoload = "no"
-let g:session_autosave = "no"
+let g:session_autoload = "yes"
+let g:session_autosave = "yes"
 let g:session_command_aliases = 1
 
 "*****************************************************************************
@@ -193,28 +193,25 @@ set number
 set numberwidth=5
 
 let no_buffers_menu=1
+let NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 " silent! colorscheme palenight
+let g:palenight_terminal_italics=1
+" colorscheme palenight
 " colorscheme one
 " colorscheme molokai
 colorscheme monokai_pro
 
-let g:molokai_original = 1
+" let g:molokai_original = 1
 
-" palenight specific config {
-" https://github.com/drewtempelmeyer/palenight.vim#true-colors
-let g:palenight_terminal_italics=1
-"" vim-one configuration
-let g:one_allow_italics = 1 " I love italic for comments
-
-let NVIM_TUI_ENABLE_TRUE_COLOR=1
+" let g:one_allow_italics = 1 " I love italic for comments
 
 set termguicolors
 
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
-set gfn=Monospace\ 10
+set gfn=Monospace
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
