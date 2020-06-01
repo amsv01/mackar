@@ -79,6 +79,7 @@ Plug 'honza/vim-snippets'
 Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'rakr/vim-one'
 
 "*****************************************************************************
 "" Custom bundles
@@ -122,6 +123,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'HerringtonDarkholme/yats.vim'
 
 
+"*****************************************************************************
 "*****************************************************************************
 "*****************************************************************************
 
@@ -189,15 +191,18 @@ set number
 set numberwidth=5
 
 let no_buffers_menu=1
-silent! colorscheme palenight
+" silent! colorscheme palenight
+colorscheme one
 
 " palenight specific config {
 " https://github.com/drewtempelmeyer/palenight.vim#true-colors
 let g:palenight_terminal_italics=1
+set background=dark
+let g:one_allow_italics = 1 " I love italic for comments
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  let NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
@@ -259,7 +264,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'palenight'
+let g:airline_theme = 'one'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -523,10 +528,6 @@ augroup vimrc-python
   autocmd!
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
       \ formatoptions+=croq softtabstop=4
-      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-augroup END
-
-" " jedi-vim
 " let g:jedi#popup_on_dot = 0
 " let g:jedi#goto_assignments_command = "<leader>g"
 " let g:jedi#goto_definitions_command = "<leader>d"
