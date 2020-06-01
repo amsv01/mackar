@@ -35,6 +35,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
+
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1
 Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
@@ -376,6 +379,9 @@ set autoread
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
+"" O alternative keys
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>k
 
 "" Split
 noremap <Leader>h :<C-u>split<CR>
