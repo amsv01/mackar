@@ -38,6 +38,8 @@ Plug 'vim-scripts/grep.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 " Plug 'w0rp/ale'
+Plug 'sjl/vitality.vim'
+"" Check here fore tmux more actions https://vimawesome.com/plugin/vitality
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
@@ -79,6 +81,7 @@ Plug 'tomasr/molokai'
 Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'rakr/vim-one'
+Plug 'phanviet/vim-monokai-pro'
 
 "*****************************************************************************
 "" Custom bundles
@@ -190,27 +193,23 @@ set number
 set numberwidth=5
 
 let no_buffers_menu=1
+set background=dark
 " silent! colorscheme palenight
-colorscheme one
+" colorscheme one
+" colorscheme molokai
+colorscheme monokai_pro
+
+let g:molokai_original = 1
 
 " palenight specific config {
 " https://github.com/drewtempelmeyer/palenight.vim#true-colors
 let g:palenight_terminal_italics=1
-set background=dark
+"" vim-one configuration
 let g:one_allow_italics = 1 " I love italic for comments
 
-if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
+let NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-if (has("termguicolors"))
-  set termguicolors
-endif
-" }
+set termguicolors
 
 set mousemodel=popup
 set t_Co=256
@@ -237,8 +236,11 @@ endif
 
 
 "" Disable the blinking cursor.
-set gcr=a:blinkon0
+" set gcr=a:blinkon0
 set scrolloff=3
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+		  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+		  \,sm:block-blinkwait175-blinkoff150-blinkon175
 
 "" Status bar
 set laststatus=2
@@ -263,7 +265,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'one'
+let g:airline_theme = 'molokai'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
