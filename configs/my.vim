@@ -81,6 +81,7 @@ Plug 'tomasr/molokai'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'rakr/vim-one'
 Plug 'phanviet/vim-monokai-pro'
+Plug 'morhetz/gruvbox'
 
 "*****************************************************************************
 "" Custom bundles
@@ -199,7 +200,9 @@ let g:palenight_terminal_italics=1
 " colorscheme palenight
 " colorscheme one
 " colorscheme molokai
-colorscheme monokai_pro
+" colorscheme monokai_pro
+let g:gruvbox_italic=1
+colorscheme gruvbox
 
 " let g:molokai_original = 1
 
@@ -489,6 +492,10 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
+noremap <M-Right> <C-w>l
+noremap <M-Left> <C-w>h
+noremap <M-Up> <C-w>k
+noremap <M-Down> <C-w>j
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
