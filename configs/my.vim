@@ -379,8 +379,11 @@ nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>k
 
 "" Split
-noremap <Leader>h :<C-u>split<CR>
-noremap <Leader>v :<C-u>vsplit<CR>
+" noremap <Leader>h :<C-u>split<CR>
+" noremap <Leader>v :<C-u>vsplit<CR>
+
+noremap <Leader>- :<C-u>split<CR>
+noremap <Leader>\| :<C-u>vsplit<CR>
 
 "" Git
 noremap <Leader>ga :Gwrite<CR>
