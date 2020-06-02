@@ -47,6 +47,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'easymotion/vim-easymotion'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Coc config {
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-eslint', 'coc-actions']
 " Remap for do codeAction of selected region
@@ -63,6 +64,8 @@ else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
 endif
+Plug 'pbogut/fzf-mru.vim'
+
 let g:make = 'gmake'
 if exists('make')
         let g:make = 'make'
@@ -377,10 +380,6 @@ set autoread
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
-"" O alternative keys
-nmap <S-Enter> O<Esc>j
-nmap <CR> o<Esc>k
-
 "" Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
@@ -502,6 +501,7 @@ noremap <M-Left> <C-w>h
 vmap < <gv
 vmap > >gv
 
+
 "" Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -510,8 +510,8 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <Leader>o :.Gbrowse<CR>
 
 "" My life easier mappings
-noremap <M-Right> $
-noremap <M-Left> ^
+" noremap <M-Right> $
+" noremap <M-Left> ^
 nnoremap <C-S-s> :wa<CR>
 
 nnoremap <C-S-Down> :m .+1<CR>==
