@@ -37,6 +37,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
+Plug 'terryma/vim-multiple-cursors'
 " Plug 'w0rp/ale'
 Plug 'sjl/vitality.vim'
 "" Check here fore tmux more actions https://vimawesome.com/plugin/vitality
@@ -324,7 +325,7 @@ function! OpenTerminal()
   split term://zsh
   resize 10
 endfunction
-nnoremap <c-n> :call OpenTerminal()<CR>
+nnoremap <C-S-t> :call OpenTerminal()<CR>
 
 "*****************************************************************************
 "" Commands
@@ -381,8 +382,8 @@ nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>k
 
 "" Split
-" noremap <Leader>h :<C-u>split<CR>
-" noremap <Leader>v :<C-u>vsplit<CR>
+noremap <Leader>h :<C-u>split<CR>
+noremap <Leader>v :<C-u>vsplit<CR>
 
 noremap <Leader>- :<C-u>split<CR>
 noremap <Leader>\| :<C-u>vsplit<CR>
@@ -492,10 +493,10 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
+noremap <M-Down> <C-w>j
+noremap <M-Up> <C-w>k
 noremap <M-Right> <C-w>l
 noremap <M-Left> <C-w>h
-noremap <M-Up> <C-w>k
-noremap <M-Down> <C-w>j
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
@@ -508,9 +509,25 @@ vnoremap K :m '<-2<CR>gv=gv
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
 
+"" My life easier mappings
+noremap <M-Right> $
+noremap <M-Left> ^
+nnoremap <C-S-s> :wa<CR>
+
+nnoremap <C-S-Down> :m .+1<CR>==
+nnoremap <C-S-Up> :m .-2<CR>==
+inoremap <C-S-Down> <Esc>:m .+1<CR>==gi
+inoremap <C-S-Up> <Esc>:m .-2<CR>==gi
+vnoremap <C-S-Down> :m '>+1<CR>gv=gv
+vnoremap <C-S-Up> :m '<-2<CR>gv=gv
+
 "*****************************************************************************
 "" Custom configs
 "*****************************************************************************
+
+" All
+set updatetime=10000
+autocmd CursorHold,CursorHoldI * update
 
 " c
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
