@@ -64,7 +64,6 @@ else
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
 endif
-Plug 'pbogut/fzf-mru.vim'
 
 let g:make = 'gmake'
 if exists('make')
@@ -185,7 +184,7 @@ endif
 " session management
 let g:session_directory = "~/.config/nvim/session"
 let g:session_autoload = "yes"
-let g:session_autosave = "yes"
+let g:session_autosave = "no"
 let g:session_command_aliases = 1
 
 "*****************************************************************************
@@ -492,10 +491,10 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
-noremap <M-Down> <C-w>j
-noremap <M-Up> <C-w>k
-noremap <M-Right> <C-w>l
-noremap <M-Left> <C-w>h
+noremap <C-Down> <C-w>j
+noremap <C-Up> <C-w>k
+noremap <C-Right> <C-w>l
+noremap <C-Left> <C-w>h
 
 "" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
@@ -520,6 +519,7 @@ inoremap <C-S-Down> <Esc>:m .+1<CR>==gi
 inoremap <C-S-Up> <Esc>:m .-2<CR>==gi
 vnoremap <C-S-Down> :m '>+1<CR>gv=gv
 vnoremap <C-S-Up> :m '<-2<CR>gv=gv
+nnoremap <C-f> :BLines<CR>
 
 "*****************************************************************************
 "" Custom configs
