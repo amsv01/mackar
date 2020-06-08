@@ -1627,6 +1627,8 @@
 	<string>{799, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedStateForSaveMode</key>
+	<true/>
 	<key>NSOverlayScrollersFallBackForAccessoryViews</key>
 	<false/>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -1670,14 +1672,21 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSUserKeyEquivalents</key>
+	<dict>
+		<key>Close</key>
+		<string>@$w</string>
+		<key>Close Terminal Window</key>
+		<string>@^$=</string>
+	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>37 83 224 275 0 0 1680 1027 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>732 561 347 181 0 0 1920 1057 </string>
+	<string>485 272 841 470 0 0 1920 1057 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>40 0 1880 1057 0 0 1920 1057 </string>
+	<string>40 0 1400 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>661 643 585 414 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -2096,6 +2105,13 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x7f</string>
+				</dict>
+				<key>0x77-0x100000-0xd</key>
+				<dict>
+					<key>Action</key>
+					<integer>38</integer>
+					<key>Text</key>
+					<string>:bd\r</string>
 				</dict>
 				<key>0xf700-0x220000-0x7e</key>
 				<dict>
@@ -2566,7 +2582,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{397, 798}</string>
+		<string>{393, 871}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>06E4F197-FF21-4EDB-95E5-4DB8EBEC6204</string>
@@ -2575,7 +2591,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>612711824.91089296</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>27</integer>
+	<integer>28</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>

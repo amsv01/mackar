@@ -125,9 +125,9 @@ alias pull='git pull '
 alias add='git add '
 alias gst='git status '
 alias vim='nvim'
+alias v='nvim'
 alias vimo='vim'
-alias vi='nvim .'
-alias v='nvim .'
+alias vh='nvim .'
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/flutter/bin:$PATH
 export XDG_CONFIG_HOME=$HOME/.config
