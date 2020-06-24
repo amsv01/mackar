@@ -40,7 +40,7 @@ Plug 'vim-scripts/grep.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 Plug 'terryma/vim-multiple-cursors'
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'sjl/vitality.vim'
 "" Check here fore tmux more actions https://vimawesome.com/plugin/vitality
 Plug 'Yggdroot/indentLine'
@@ -68,7 +68,7 @@ endif
 
 let g:make = 'gmake'
 if exists('make')
-        let g:make = 'make'
+    let g:make = 'make'
 endif
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
@@ -86,6 +86,8 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'rakr/vim-one'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'morhetz/gruvbox'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'vim-airline/vim-airline-themes'
 
 "*****************************************************************************
 "" Custom bundles
@@ -95,7 +97,6 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
 
-
 " html
 "" HTML Bundle
 Plug 'hail2u/vim-css3-syntax'
@@ -103,16 +104,14 @@ Plug 'gorodinskiy/vim-coloresque'
 Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
-
 " javascript
 "" Javascript Bundle
 Plug 'jelera/vim-javascript-syntax'
 
-
 " " python
-" "" Python Bundle
-" Plug 'davidhalter/jedi-vim'
-" Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+"" Python Bundle
+Plug 'davidhalter/jedi-vim'
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 
 " rust
@@ -251,15 +250,16 @@ set background=dark
 " silent! colorscheme palenight
 let g:palenight_terminal_italics=1
 " colorscheme palenight
+let g:one_allow_italics = 1 " I love italic for comments
 " colorscheme one
+let g:molokai_original = 1
 " colorscheme molokai
 " colorscheme monokai_pro
 let g:gruvbox_italic=1
-colorscheme gruvbox
+" colorscheme gruvbox
 
-" let g:molokai_original = 1
-
-" let g:one_allow_italics = 1 " I love italic for comments
+let ayucolor="mirage"
+colorscheme ayu
 
 set termguicolors
 
@@ -317,7 +317,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'palenight'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -497,7 +497,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 " ale
-" let g:ale_linters = {}
+let g:ale_linters = {}
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -555,8 +555,6 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <Leader>o :.Gbrowse<CR>
 
 "" My life easier mappings
-" noremap <M-Right> $
-" noremap <M-Left> ^
 nnoremap <C-S-s> :wa<CR>
 
 nnoremap <C-S-Down> :m .+1<CR>==
@@ -572,7 +570,7 @@ nnoremap <C-f> :BLines<CR>
 "*****************************************************************************
 
 " All
-set updatetime=300
+set updatetime=5000
 autocmd CursorHold,CursorHoldI * update
 
 " c
@@ -601,15 +599,15 @@ augroup vimrc-python
   autocmd!
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
       \ formatoptions+=croq softtabstop=4
-" let g:jedi#popup_on_dot = 0
-" let g:jedi#goto_assignments_command = "<leader>g"
-" let g:jedi#goto_definitions_command = "<leader>d"
-" let g:jedi#documentation_command = "K"
-" let g:jedi#usages_command = "<leader>n"
-" let g:jedi#rename_command = "<leader>r"
-" let g:jedi#show_call_signatures = "0"
-" let g:jedi#completions_command = "<C-Space>"
-" let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#show_call_signatures = "0"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#smart_auto_mappings = 0
 
 " ale
 " :call extend(g:ale_linters, {
