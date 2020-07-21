@@ -37,7 +37,7 @@ arg1="${1:-}"
 ###############################################################################
 
 
-ftest() {
+file_exist() {
 	echo " info: Checking for ${1}"
 	if ! type -f "${1}" > /dev/null 2>&1; then
 		return 1
@@ -46,28 +46,29 @@ ftest() {
 	fi
 }
 
-features () {
-	for f in "${@}"; do
-		ftest "${f}" || {
-		echo >&2 "  error: Missing \`${f}'! Make sure it exists and try again."
-		return 1
-	}
-	done
-	return 0
-}
+# features () {
+# 	for f in "${@}"; do
+# 		file_exist "${f}" || {
+# 		echo >&2 "  error: Missing \`${f}'! Make sure it exists and try again."
+# 		return 1
+# 	}
+# 	done
+# 	return 0
+# }
 
-ibrew(){
-	if ! ftest brew; then
+install_brew(){
+	if ! file_exist brew; then
 		xcode-select --install
 		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 		brew tap caskroom/cask
 	fi
 }
 
-bi(){
+brew_install(){
 	for f in "${@}"; do
-		ftest "${f}" || {
-		brew install git
+		file_exist "${f}" || {
+		brew install "${f}"
+		echo " info: ${f} has install!"
 		return 1
 	}
 	done
@@ -75,12 +76,17 @@ bi(){
 	return 0
 }
 
-igit(){
-	if ! ftest git; then
-		bi git
+install_git(){
+	if ! file_exist git; then
+		brew_install git
 	else
 		echo " info: git already exist!"
 	fi
+}
+
+setup_machine(){
+	install_brew
+	install_git
 }
 
 #source ./console.sh
