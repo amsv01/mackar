@@ -241,7 +241,7 @@ augroup end
 "*****************************************************************************
 syntax on
 set ruler
-set number
+set number relativenumber
 set numberwidth=5
 
 let no_buffers_menu=1
