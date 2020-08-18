@@ -1962,16 +1962,8 @@
 	<true/>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.personal/mackar/configs/iterm2</string>
-	<key>NSNavLastUserSetHideExtensionButtonState</key>
-	<true/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{799, 448}</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
-	<string>{712, 448}</string>
-	<key>NSNavPanelExpandedStateForSaveMode</key>
-	<true/>
-	<key>NSOverlayScrollersFallBackForAccessoryViews</key>
-	<false/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -2013,23 +2005,14 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSUserKeyEquivalents</key>
-	<dict>
-		<key>Close</key>
-		<string>@$w</string>
-		<key>Close Terminal Window</key>
-		<string>@^$=</string>
-	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>37 83 224 275 0 0 1680 1027 </string>
+	<string>38 83 224 275 0 0 1792 1097 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>485 272 841 470 0 0 1920 1057 </string>
-	<key>NSWindow Frame UKCrashReporter</key>
-	<string>127 443 592 584 0 0 1680 1027 </string>
+	<string>579 456 799 448 0 0 1920 1057 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>669 498 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>40 0 1400 877 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>661 643 585 414 0 0 1920 1057 </string>
+	<string>0 51 1792 1046 0 0 1792 1097 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2824,7 +2807,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>JetBrainsMono-Bold 14</string>
+			<string>JetBrainsMono-Bold 15</string>
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -2901,46 +2884,32 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.9</string>
-		<string>3.3.20200530-nightly</string>
-	</array>
-	<key>NoSyncBFPFavorites</key>
-	<array>
-		<string>JetBrains Mono</string>
+		<string>3.3.6</string>
+		<string>3.3.12</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
 		<string>JetBrains Mono</string>
-		<string>Arial</string>
+		<string>Klarna Text Mono</string>
+		<string>Monaco</string>
 	</array>
-	<key>NoSyncFrame_SessionsPreferences</key>
-	<dict>
-		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1080}}</string>
-		<key>topLeft</key>
-		<string>{676, 922}</string>
-	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{0, 0}, {1792, 1120}}</string>
 		<key>topLeft</key>
-		<string>{526, 798}</string>
+		<string>{269, 595}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
-	<string>06E4F197-FF21-4EDB-95E5-4DB8EBEC6204</string>
-	<key>NoSyncLastOSVersion</key>
-	<string>Version 10.15.4 (Build 19E287)</string>
-	<key>NoSyncLastTipTime</key>
-	<real>612711824.91089296</real>
+	<string>54AC1C47-8F2F-4C0C-B930-12263EB70CA6</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>32</integer>
+	<integer>6</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>608412550.97792006</real>
+	<real>618090592.05002606</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
@@ -3052,14 +3021,6 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>selectionLength</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
 				<string>path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -3071,14 +3032,6 @@
 				<string>triggerName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>parentSession</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -3197,14 +3150,6 @@
 				<true/>
 				<key>name</key>
 				<string>tmuxStatusLeft</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>selection</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3456,11 +3401,11 @@
 		<array>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
+				<true/>
 				<key>name</key>
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -3515,14 +3460,6 @@
 				<true/>
 				<key>name</key>
 				<string>iterm2.localhostName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentSession.jobPid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3626,14 +3563,6 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.terminalWindowName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
 				<string>currentSession.hostname</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -3664,9 +3593,17 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
 				<string>currentSession</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -3699,14 +3636,8 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncRestoreWindowsCount</key>
-	<integer>0</integer>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
-	<real>607972345.95057905</real>
-	<key>NoSyncTipsToNotShow</key>
-	<array>
-		<string>000</string>
-	</array>
+	<real>617632527.22893798</real>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -3747,20 +3678,22 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/aminmousavi/.personal/mackar/configs/iterm2</string>
+	<string>/Users/s.mousavizadeh/.personal/mackar/configs/iterm2</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
-	<false/>
+	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/nightly_new.xml?shard=28</string>
+	<string>https://iterm2.com/appcasts/final_new.xml?shard=25</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-03T08:11:10Z</date>
+	<date>2020-08-12T10:25:36Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
@@ -3776,8 +3709,6 @@
 	<integer>9</integer>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
-	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1589143680</real>
 	<key>UseBorder</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
@@ -3787,7 +3718,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.20200530-nightly</string>
+	<string>3.3.12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
